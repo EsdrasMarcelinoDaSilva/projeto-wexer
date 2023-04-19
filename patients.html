@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="./estilos/cascade.css">
+    <script src="./scripts/patients.js" defer></script>
+    <title>Patient</title>
+</head>
+<body>
+  <!---------header----------->
+    <header class="bg-white d-flex justify-content-between">
+      <div class="logo px-4 py-3">
+        <img src="./imagens/logo-header.png" alt="Logo">
+      </div>
+      <div class="end d-flex mt-4">
+        <p class="fs-4">Welcome,</p>
+        <h4 class="fs-3" id="name-header"></h4>
+        <div class="dropdown mb-1 mr-1">
+        <button class="btn dropdown-toggle p-0" id="exit" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        </button>
+          <ul class="dropdown-menu p-0" id="email-header">
+            <li><a class="dropdown-item" href="" id="email-a"></a></li>
+            <li><a class="dropdown-item" href="index.html">Exit</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+<!----------------------------------------->
+    <div class="title mt-2 py-2">
+        <h3>My patients</h3>
+    </div>
+    <!------My patients------>
+    <section>
+
+      <div class="container bg-white py-4 px-4">
+        <div class="search-center d-flex justify-content-between">
+      
+            <button onclick="showModal('main')" class="btn btn-lg mb-5">
+              <img class="plus" src="./imagens/plus-circle.png" alt="">
+              New Register
+            </button>
+      
+          <div class="search-right d-flex w-50">
+            <input class="input" type="search" name="" id="" placeholder="Search">
+              <button class="btn btn-success filter">
+                <img class="glass" src="./imagens/search.png" alt="">
+                Filter
+              </button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-2 small-left first text-center py-2 px-0">Code</div>
+          <div class="col-4 first small-left py-2 px-1">Name</div>
+          <div class="col-4 first small-left py-2 px-1">Cpf</div>
+          <div class="col-2 first small-left text-center py-2 px-0">Actions</div>
+          <div class="col-2 first text-center py-2 px-0">28</div>
+          <div class="col-4 first py-2 px-1" id="patient-1">Ana Maria</div>
+          <div class="col-4 first py-2 px-1">885.064.379-9</div>
+          <div class="col-2 first d-flex justify-content-evenly py-2 px-0">
+            <a href="#"><img src="./imagens/section.png" alt=""></a><a href="#"><img src="./imagens/edit.png" alt=""></a><a href="#"><img src="./imagens/bin.png" alt=""></a>
+          </div>
+          <div class="col-2 first text-center py-2 px-0">55</div>
+          <div class="col-4 first py-2 px-1">Ana Clara</div>
+          <div class="col-4 first py-2 px-1">885.064.379-9</div>
+          <div class="col-2 first  d-flex justify-content-evenly  py-2 px-0">
+            <a href="#"><img src="./imagens/section.png" alt=""></a><a href="#"><img src="./imagens/edit.png" alt=""></a><a href="#"><img src="./imagens/bin.png" alt=""></a>
+          </div>
+          <div class="col-2 first text-center py-2 px-0">2452</div>
+          <div class="col-4 first py-2 px-1">Cesar Pinheiro</div>
+          <div class="col-4 first py-2 px-1">885.064.379-9</div>
+          <div class="col-2 first  d-flex justify-content-evenly py-2 px-0">
+            <a href="#"><img src="./imagens/section.png" alt=""></a><a href="#"><img src="./imagens/edit.png" alt=""></a><a href="#"><img src="./imagens/bin.png" alt=""></a>
+          </div>
+          <div class="col-2 first text-center py-2 px-0">42</div>
+          <div class="col-4 first py-2 px-1">Carlos Eduardo</div>
+          <div class="col-4 first py-2 px-1">885.064.379-9</div>
+          <div class="col-2 first d-flex justify-content-evenly  py-2 px-0">
+            <a href="#"><img src="./imagens/section.png" alt=""></a><a href="#"><img src="./imagens/edit.png" alt=""></a><a href="#"><img src="./imagens/bin.png" alt=""></a>
+          </div>
+          <div class="col-2 first text-center py-2 px-0">2248</div>
+          <div class="col-4 first py-2 px-1">Silvia Moreira</div>
+          <div class="col-4 first py-2 px-1">885.064.379-9</div>
+          <div class="col-2 first d-flex justify-content-evenly py-2 px-0">
+            <a href="#"><img src="./imagens/section.png" alt=""></a><a href="#"><img src="./imagens/edit.png" alt=""></a><a href="#"><img src="./imagens/bin.png" alt=""></a>
+          </div>
+          <div class="col-2 first text-center py-2 px-0">24</div>
+          <div class="col-4 first py-2 px-1">Wander Martins</div>
+          <div class="col-4 first py-2 px-1">885.064.379-9</div>
+          <div class="col-2 first d-flex justify-content-evenly py-2 px-0">
+            <a href="#"><img src="./imagens/section.png" alt=""></a><a href="#"><img src="./imagens/edit.png" alt=""></a><a href="#"><img src="./imagens/bin.png" alt=""></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- modal new-register -->
+    <main id="main">
+
+      <div class="div-form d-flex justify-content-center">
+        <form>
+          <div class="d-flex justify-content-between patients">
+            
+            <div class="patient-data d-flex align-items-center mb-2">
+              <h3 class="pt">New patient</h3>
+            </div>
+
+            <div class="close-modal">
+                <span onclick="closeModal('main')"><img id="img-close" src="./imagens/close-circle-fill.png" alt=""></span>
+            </div>
+          </div>
+          
+          
+          
+          <div class="col-12 div-modal-center d-flex justify-content-center">
+
+            <div class="col-4">
+              <div class="form-group">
+                <label for="inputEmail4">Cpf</label><br>
+                <input type="text" class="form-control" id="input1" placeholder="">
+              </div>
+            </div>
+
+            <div class="col-4">
+              <div class="form-group">
+                <label for="inputEmail4">Name</label>
+                <input type="text" class="form-control" id="input2" placeholder="">
+              </div>
+            </div>
+
+            <div class="col-4">
+              <div class="form-group">
+                <label for="inputEmail4">Date of birth</label>
+                <input type="text" class="form-control" id="input3" placeholder="">
+              </div>
+            </div>
+           
+          </div>
+
+          <div class="col-12 div-modal-center d-flex justify-content-center">
+
+            <div class="col-4">
+              <div class="form-group">
+                <label for="inputEmail4">Email</label><br>
+                <input type="email" class="form-control" id="input4" placeholder="">
+              </div>
+            </div>
+
+            <div class="col-4">
+              <div class="form-group">
+                <label for="inputEmail4">Sex/Gender</label>
+                <input list="datalist" class="form-control" id="input5" placeholder="">
+                <datalist id="datalist">
+                  <option value="Masculine"></option>
+                  <option value="Feminine"></option>
+                </datalist>
+              </div>
+            </div>
+
+            <div class="col-4">
+              <div class="form-group">
+                <label for="inputEmail4">Nationality</label>
+                <input list="data-list" class="form-control" id="input6" placeholder="">
+                <datalist id="data-list">
+                  <option value="American"></option>
+                  <option value="Brazilian"></option>
+                  <option value="others"></option>
+                </datalist>
+              </div>
+            </div>
+           
+          </div>
+
+          <div class="col-12 div-modal-center d-flex justify-content-center">
+
+            <div class="col-4">
+              <div class="form-group">
+                <label for="inputEmail4">Naturalness</label><br>
+                <input type="text" class="form-control" id="input7" placeholder="">
+              </div>
+            </div>
+
+            <div class="col-4">
+              <div class="form-group">
+                <label for="inputEmail4">Profession</label>
+                <input type="text" class="form-control" id="input8" placeholder="">
+              </div>
+            </div>
+
+            <div class="col-4">
+              <div class="form-group">
+                <label for="inputEmail4">Schooling</label>
+                <input type="text" class="form-control" id="input9" placeholder="">
+              </div>
+            </div>
+           
+          </div>
+
+          <div class="col-12 div-modal-center d-flex justify-content-center">
+
+            <div class="col-4">
+              <div class="form-group">
+                <label for="inputEmail4">Marital status</label><br>
+                <input list="data" class="form-control" id="input10" placeholder="">
+                <datalist id="data">
+                  <option value="Married"></option>
+                  <option value="Divorced"></option>
+                  <option value="Separate"></option>
+                  <option value="Single"></option>
+                </datalist>
+              </div>
+            </div>
+
+            <div class="col-4">
+              <div class="form-group">
+                <label for="inputEmail4">Mother</label>
+                <input type="text" class="form-control" id="input11" placeholder="">
+              </div>
+            </div>
+
+            <div class="col-4">
+              <div class="form-group">
+                <label for="inputEmail4">Father</label>
+                <input type="text" class="form-control custom-input" id="input12" placeholder="">
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div class="base d-flex justify-content-between mt-4">
+            <div class="mt-2"><span class="span">*</span><span>Required fields</span></div>
+            <div class="baseboard d-flex gap-2"><span class="mt-2 cancel">Cancel</span><button class="create">Create</button> 
+            </div>
+          </div>
+        </form>
+        
+      </div>
+
+    </main>
+
+    <!-- modal-patient -->
+
+    <main id="main-pt">
+
+      <div class="div-form d-flex justify-content-center">
+        <form>
+          <div class="d-flex justify-content-between patients">
+            
+            <div class="patient-data d-flex align-items-center mb-2">
+              <h3 class="pt">Patient data</h3>
+              <img class="edit-img" src="./imagens/edit.png" alt="">
+            </div>
+
+            <div class="close-modal">
+                <span onclick="closeModal('main-pt')">
+                  <img id="img-close-1" src="./imagens/close-circle-fill.png" alt="">
+                </span>
+            </div>
+          </div>
+          
+          
+          <div class="col-12 div-modal-center d-flex justify-content-center">
+
+            <div class="col-4">
+              <div class="form-group">
+                <label for="inputEmail4">Cpf</label><br>
+                <input type="text" class="form-control" id="input4" placeholder="">
+              </div>
+            </div>
+
+            <div class="col-4">
+              <div class="form-group">
+                <label for="inputEmail4">Name</label>
+                <input type="text" class="form-control" id="input13" placeholder="">
+              </div>
+            </div>
+
+            <div class="col-4">
+              <div class="form-group">
+                <label for="inputEmail4">Date of birth</label>
+                <input type="text" class="form-control" id="input14" placeholder="">
+              </div>
+            </div>
+           
+          </div>
+
+          <div class="col-12 div-modal-center d-flex justify-content-center">
+
+            <div class="col-4">
+              <div class="form-group">
+                <label for="inputEmail4">Email</label><br>
+                <input type="email" class="form-control" id="input15" placeholder="">
+              </div>
+            </div>
+
+            <div class="col-4">
+              <div class="form-group">
+                <label for="inputEmail4">Sex/Gender</label>
+                <input list="datalist" class="form-control" id="input16" placeholder="">
+                <datalist id="datalist">
+                  <option value="Masculine"></option>
+                  <option value="Feminine"></option>
+                </datalist>
+              </div>
+            </div>
+
+            <div class="col-4">
+              <div class="form-group">
+                <label for="inputEmail4">Nationality</label>
+                <input list="data-list" class="form-control" id="input17" placeholder="">
+                <datalist id="data-list">
+                  <option value="American"></option>
+                  <option value="Brazilian"></option>
+                  <option value="others"></option>
+                </datalist>
+              </div>
+            </div>
+           
+          </div>
+
+          <div class="col-12 div-modal-center d-flex justify-content-center">
+
+            <div class="col-4">
+              <div class="form-group">
+                <label for="inputEmail4">Naturalness</label><br>
+                <input type="text" class="form-control" id="input18" placeholder="">
+              </div>
+            </div>
+
+            <div class="col-4">
+              <div class="form-group">
+                <label for="inputEmail4">Profession</label>
+                <input type="text" class="form-control" id="input19" placeholder="">
+              </div>
+            </div>
+
+            <div class="col-4">
+              <div class="form-group">
+                <label for="inputEmail4">Schooling</label>
+                <input type="text" class="form-control" id="input20" placeholder="">
+              </div>
+            </div>
+           
+          </div>
+
+          <div class="col-12 div-modal-center d-flex justify-content-center">
+
+            <div class="col-4">
+              <div class="form-group">
+                <label for="inputEmail4">Marital status</label><br>
+                <input list="data" class="form-control" id="input21" placeholder="">
+                <datalist id="data">
+                  <option value="Married"></option>
+                  <option value="Divorced"></option>
+                  <option value="Separate"></option>
+                  <option value="Single"></option>
+                </datalist>
+              </div>
+            </div>
+
+            <div class="col-4">
+              <div class="form-group">
+                <label for="inputEmail4">Mother</label>
+                <input type="text" class="form-control" id="input22" placeholder="">
+              </div>
+            </div>
+
+            <div class="col-4">
+              <div class="form-group">
+                <label for="inputEmail4">Father</label>
+                <input type="text" class="form-control custom-input" id="input23" placeholder="">
+              </div>
+            </div>
+          </div>
+         
+        </form>
+        
+      </div>
+
+    </main>
+
+    <script src="./scripts/modal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+</body>
+</html>

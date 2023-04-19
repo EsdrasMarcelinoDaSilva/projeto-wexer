@@ -1,0 +1,345 @@
+body{
+    background-color: #E5E5E5
+}
+header{
+    box-shadow: 0.0625em 0.0625em 0.5em rgba(0, 0, 0, 0.424);
+}
+.end{
+    gap: 0.5rem;
+    margin-right: 0.875em;
+}
+p{
+    font-weight: lighter;
+}
+p, h4{
+    color:#017849 ;
+}
+.dropdown-item{
+    background-color: #017849;
+    color: white;
+}
+.dropdown-item:hover{
+    background-color: #017849;
+    color: white;
+}
+.dropdown-toggle::after {
+    font-size: 1.8em;
+    color: rgb(87, 86, 86);
+}
+.btn.dropdown-toggle{
+    background-color: white;
+    margin-top: 0.75em;
+}
+.btn.dropdown-toggle:hover{
+    background-color: white;
+}
+.dropdown-toggle:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: transparent;
+}
+.search-center{
+    width: 80%;
+    justify-content: space-between;
+}
+.search-center h3{
+    color: gray;
+    margin-left: 0.5em;
+}
+.search{
+    width: 99%;
+}
+.search-right{
+    justify-content: end;
+    width: 50%;
+}
+.btn {
+    width: 2vw;
+}
+.btn{
+    border: none;
+    border-radius: 2.5em;
+    color: white;
+    background-color:#017849;
+}
+.filter{
+    padding-left: 0;
+    width: 22%;
+    border-radius: 0em 2em 2em 0em;
+    overflow: hidden;
+}
+.input{
+    width: 80%;
+    border: none;
+    padding-left: 0.5em;
+    border: 1px solid rgba(128, 128, 128, 0.331);
+    border-radius: 2em 0em 0em 2em;
+}
+input:focus{
+    outline: none;
+}
+.container{
+    height: 100vh;
+    width: 100vw;
+}
+.content{
+    width: 100%;
+    height: 100%;
+}
+.section-first{
+    padding: 1em 0em 0em 1em;
+    width: 26%;
+    height: 8%;
+    border-radius:0.375em;
+} 
+@media (max-width: 576px) {
+    .section-first {
+      width: 100%;
+    }
+}
+.section{
+    color: gray;
+    height: 4em;
+    border-radius:0.375em;
+}
+span img{
+    padding-right: 0.5em
+}
+
+/* modal new section */
+
+#main-np{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.86);
+    display: none;
+}
+.div-form{
+    height: 100%;
+    align-items: center;
+}
+form{
+    width: 50%;
+    height: 80%;
+    padding: 2%;
+    border-radius: 0.75em;
+    background-color: white;
+    overflow-y: scroll;
+}
+.div-modal-center{
+    gap: 0.625em;
+}
+.form-group{
+    margin: 1% 1% 2% 2%;
+}
+.form-control:focus{
+    box-shadow: 0 0 4px #017849;
+    border: 0.0625em solid rgb(1, 245, 1);
+    outline: none;
+}
+.patient-data{
+    width: 40%;
+    gap: 1rem;
+}
+.pt{
+    margin-left: 0;
+    color:#017849;
+}
+.edit-img{
+    width: 2.25em;
+    height: 1.875em;
+}
+.form-control{
+    padding: 6%;
+}
+#inputEmail4{
+    padding: 2%;
+    width: 95%;
+}
+#Textarea{
+    
+    height:8em;
+    padding:0.5em;
+}
+hr{
+    border-top: 0.125em solid gray;
+}
+.span{
+    color:grey;
+}
+.baseboard{
+    width: 30%;
+}
+.cancel{
+    margin-right: 2%;
+}
+.create{
+    width: 90%;
+    padding: 4.5%;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    background-color:#017849;
+}
+.circle{
+    border-radius: 100%;
+    background-color: #017849;
+    width: 6%;
+    color: white;
+    font-weight: 600;
+}
+#Textarea{
+    resize: none;
+}
+
+/* modal fact */
+
+#main-fact{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.86);
+    display: none;
+}
+#input10{
+    padding: 2.4%;
+}
+.form-fact{
+    overflow: clip;
+    height: 74%;
+}
+#Textarea-fact{
+    height: 10em;  
+    padding: 0.5em;
+    width: 112%;
+    resize: none;
+}
+.div-modal-center-1{
+    margin-left: 0.5em;
+}
+.new-content{
+    background-color: green;
+    width: 70%;
+    height: 4%;
+}
+
+/* ----field section----- */
+
+.line{
+    width: 83%;
+}
+.hrDiv{
+    border:0.125em solid gray; 
+}
+#down{
+    border: none;
+    background-color:#E5E5E5;
+    padding: 0;
+}
+#down.dropdown-toggle::after{
+    vertical-align: 0;
+}
+.dropdown-flex{
+    margin-bottom:0.6em;
+}
+.all{
+    margin-left: 0.3em;
+}
+.dropdown-menu{
+    width: 16%;  
+}
+li{
+    padding: 1em;
+}
+.dropdown-items{
+    color:unset;
+    text-decoration: none;
+}
+li:hover{
+    background-color: #0eb37151;
+    font-weight: 500;
+    
+}
+li:hover a{
+    color:#007515;
+}
+.fieldSection{
+    padding: 0.8em;
+    border-radius: 0 0.5em 0.5em 0;
+    margin-top: 1em;
+    border-left: 0.2em solid #017849;
+    background-color: white;
+}
+.ellipsis{
+    color: black;
+    font-size:x-large;
+}
+.elipse-g{
+    position: absolute;
+    top: -1.2em;
+    width: 2.2em;
+    height: 2.2em;
+}
+.m-white{
+    position: absolute;
+    top: -0.9em;
+    left: 1.2em;
+    width: 1.5em;
+    height: 1.5em;
+}
+.elipse-b{
+    position: absolute;
+    top: -1.2em;
+    left: 0.9em;
+    width: 2.2em;
+    height: 2.2em;
+}
+.m-white-b{
+    position: absolute;
+    top: -0.9em;
+    left: 1.2em;
+    width: 1.5em;
+    height: 1.5em;
+}
+.in-between{
+    height: 2.4em;
+    margin-left: 2em;
+    border-left:0.2em solid #2F80ED; 
+}
+.title-sf{
+    margin-top: 1em;
+}
+.field-p{
+    color: unset;
+    margin-top: 0.5em;
+    font-size: small;
+}
+.field-span{
+    font-size:0.7em;
+}
+.fieldFact{
+    padding: 0.8em;
+    border-radius: 0 0.5em 0.5em 0;
+    border-left: 0.2em solid #2F80ED;
+    background-color: white;
+}
+.between{
+    height: 1.5em;
+    margin-left: 2em;
+    border-left:0.2em solid #017849;
+}
+#down-rt{
+    border: none;
+    background-color: white;
+    padding: 0;
+    font-size: x-large;
+}
+.arrow{
+    text-decoration: none;
+    color: black;
+}

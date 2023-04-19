@@ -1,0 +1,65 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url('../imagens/logo-1.png');
+    background-size: 30%;
+    background-repeat: no-repeat;
+    background-color: #E5E5E5;
+    width: 100vw;
+    height: 100vh;
+}
+.box-cadastro{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 7.5em;
+    width: 36%;
+    border-radius: 1.125em;
+    background-color: white;
+    box-shadow: 0.0625em 0.0625em 0.5em rgba(0, 0, 0, 0.418);
+}
+.title{
+    color: #017849;
+}
+.img{
+    display: flex;
+    justify-content: center;
+    margin-top: 1.875em;
+}
+.form-signin{
+    padding: 0.625em;
+    width: 80%;
+}
+.form-control:focus{
+    box-shadow: none;
+    outline: none;
+    border-width:  0.125em;
+}
+img{
+    width: 70%;
+    text-align: center;
+}
+.sr-only{
+    color:#017849;
+}
+.button{
+    display: flex;
+    justify-content:end;
+}
+.btn{
+    color: white;
+    background-color: #017849;
+    border: 0.0625em solid ;
+}
+.btn:hover{
+    color: white;
+    background-color: #017849;
+    border: 0.0625em solid ;
+}
+.marked{
+    color: red;
+}
+.content{
+    color: #064a2f;
+}
