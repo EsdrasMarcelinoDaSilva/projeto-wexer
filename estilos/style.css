@@ -11,10 +11,10 @@ body{
 }
 .box{
     display: flex;
+    height: fit-content;
     justify-content: center;
     margin: 0 auto;
     margin-top: 120px;
-    width: 40%;
     border-radius: 18px;
     background-color: #017849;
 }
@@ -23,7 +23,6 @@ body{
     justify-content: center;
     margin: 0 auto;
     margin-top: 120px;
-    width: 40%;
     border-radius: 18px;
     background-color: white;
     box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.418);

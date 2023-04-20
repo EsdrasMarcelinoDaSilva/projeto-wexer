@@ -8,6 +8,7 @@ body{
 }
 .container{
     border-radius: 0.6em;
+    width: 84%;
 }
 header{
     box-shadow: 0.0625em 0.0625em 0.5em rgba(0, 0, 0, 0.424);
@@ -50,33 +51,33 @@ h3{
     margin-left: 8.5%;
     color: rgb(87, 86, 86);
 }  
-.first{
+.first, .first-cpf{
     border: 0.0625em solid rgba(128, 128, 128, 0.331);
 }
 .search-center{
+    margin-left: 0%;
     width:100%;
 }
 .btn{
     border: none;
-    border-radius: 40px;
+    border-radius: 2.5em;
     color: white;
     background-color:#017849;
 }
-.plus{
-    margin-right: 6px;
-    margin-bottom: 5px;
+#register{
+    padding: 0.6em;
 }
 .btn:hover{
     border: none;
-    border-radius: 40px;
+    border-radius: 2.5em;
     color: white;
     background-color:#017849;
 }
 .filter{
     padding-left: 0;
     width: 24%;
-    height: 50%;
-    border-radius: 0px 26px 26px 0px;
+    height: 88%;
+    border-radius: 0 1.625em 1.625em 0;
     overflow: hidden;
 }
 .filter:hover{
@@ -88,10 +89,10 @@ h3{
 }
 .input{
     width: 90%;
-    height: 50%;
+    height: 88%;
     border: none;
-    padding-left: 8px;
-    border: 1px solid rgba(128, 128, 128, 0.331);
+    padding-left: 0.5em;
+    border: 0.0625em solid rgba(128, 128, 128, 0.331);
     border-radius: 1.625em 0em 0em 1.625em;
 }
 input:focus{
@@ -126,13 +127,13 @@ form{
     background-color: white; 
 }
 .div-modal-center{
-    gap: 10px;
+    gap: 0.625em;
 }
 .form-group{
     margin: 1% 1% 2% 2%;
 }
 .form-control:focus{
-    box-shadow: 0 0 4px #017849;
+    box-shadow: 0 0 0.25em #017849;
     border: 1px solid rgb(1, 245, 1);
     outline: none;
 }

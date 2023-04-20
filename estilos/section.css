@@ -343,3 +343,6 @@ li:hover a{
     text-decoration: none;
     color: black;
 }
+.pencil, .delete-line{
+    margin-left: 1em;
+}

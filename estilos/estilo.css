@@ -14,7 +14,6 @@ body{
     justify-content: center;
     margin: 0 auto;
     margin-top: 7.5em;
-    width: 40%;
     border-radius: 1.125em;
     background-color: white;
     box-shadow: 0.0625em 0.0625em 0.5em rgba(0, 0, 0, 0.418);
@@ -23,7 +22,6 @@ body{
     display: flex;
     justify-content: center;
     margin: 0 auto;
-    width: 40%;
     border-radius: 1.125em;
     background-color: white;
     box-shadow: 0.0625em 0.0625em 0.5em rgba(0, 0, 0, 0.418);
@@ -51,7 +49,10 @@ img{
 }
 .sr-only{
     color:#017849;
-}  
+} 
+.marked{
+    color: red;
+} 
 .btn-lg{
     width:auto;
     min-width: 50%;

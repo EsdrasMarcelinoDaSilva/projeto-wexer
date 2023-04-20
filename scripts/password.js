@@ -1,5 +1,5 @@
 async function getUser(){
-    const apiResponse = await fetch("http://localhost:3000/patients")
+    const apiResponse = await fetch("http://localhost:3000/user")
     const users = await apiResponse.json()
     console.log(users)
 }
@@ -40,7 +40,24 @@ passwordForm.addEventListener('submit', async (event) =>{
         alert('eight digits required')
         return
     }
-
+    const user = {
+        "name": name,
+        "email": email,
+        "password": password,
+    }
+   
+    const createPost = async (user) => {
+       await fetch("http://localhost:3000/user", {
+          method: "POST",
+          headers: {
+            'Accept': 'application/json, text/plain, */*',
+            'Content-Type': 'application/json'
+         },
+          body: JSON.stringify(user)
+        }); 
+    }
+    createPost(user)
+    
     window.localStorage.setItem('user', JSON.stringify(user))
     window.location.href = 'patients.html'
    
