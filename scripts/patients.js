@@ -1,3 +1,4 @@
+// <--------content user login header-------->
 const nameHeader = document.querySelector('#name-header')
 const emailHeader = document.querySelector('#email-a')
 const btnExit = document.querySelector('#exit')
@@ -8,11 +9,7 @@ const users = JSON.parse(userStorage)
 nameHeader.textContent = users.name
 emailHeader.textContent = users.email
 
-// btnExit.onclick = (e) =>{
-//     window.localStorage.clear()
-// }
-console.log(users, typeof users)
-
+//<-----------modal new-register------------->
 
 const form = document.querySelector('#form-new')
 form.addEventListener('submit', (e) => {
@@ -62,25 +59,33 @@ const createPost = async (patient) => {
 })
 
 async function displayPatient(){
-    const response  = await fetch("http://localhost:3000/patients")
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const user = urlParams.get('user')
+
+    console.log(user)
+    const response  = await fetch("http://localhost:3000/patients/")
     const patients = await response.json()
     const objPatients = document.querySelector('#row')
+    console.log(patients)
+
     let html = ''
     patients.forEach(patient =>{
         
     html += `<div class="col-2 first text-center py-2 px-0">${patient.id}</div>
-    <div class="col-4 first py-2 px-1 patient-1" id="patient-1" onclick="showPatientModal(${patient.id})">${patient.name}</div>
+     <div class="col-4 first py-2 px-1 patient-1" id="patient-1" onclick="showPatientModal(${patient.id})">${patient.name}</div>
     <div class="col-4 first py-2 px-1">${patient.cpf}</div>
     <div class="col-2 first d-flex justify-content-evenly py-2 px-0 flex-wrap">
-      <a href="#"><img src="./imagens/section.png" alt=""></a><a href="#"><img src="./imagens/edit.png" alt=""></a><a href="#" onclick="deletePatient(${patient.id})"><img src="./imagens/bin.png" alt=""></a>
+    <a href="section.html?user=${patient.id}"><img src="./imagens/section.png" alt=""></a><a href=""><img src="./imagens/edit.png" alt=""></a><a href="#" onclick="deletePatient(${patient.id})"><img src="./imagens/bin.png" alt=""></a>
     </div>`
-
-    objPatients.innerHTML = html
-
+   
     })
+
+    objPatients.innerHTML = html   
 }
 document.addEventListener("DOMContentLoaded", () => {
     displayPatient()
+    console.log('entrei')
 })
 
 async function deletePatient(id){

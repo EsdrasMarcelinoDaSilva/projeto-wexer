@@ -21,21 +21,6 @@
   ],
   "patients": [
     {
-      "cpf": "033090233-74",
-      "name": "samuel",
-      "dateOfBirth": "29/08/2008",
-      "email": "samuel14@hotmai.com",
-      "sex": "Masculine",
-      "nationality": "Brazilian",
-      "naturalness": "Bayeux",
-      "profession": "jovem aprendiz",
-      "schooling": "médio",
-      "maritalStatus": "Single",
-      "mother": "estela",
-      "father": "esdras",
-      "id": 1
-    },
-    {
       "cpf": "064379024-18",
       "name": "Esdras",
       "dateOfBirth": "10/05/1984",
@@ -49,6 +34,36 @@
       "mother": "maria jose",
       "father": "Tarciso Marcelino",
       "id": 2
+    },
+    {
+      "cpf": "064379024-18",
+      "name": "alice",
+      "dateOfBirth": "10/01/2000",
+      "email": "alice08@gmail.com",
+      "sex": "Feminine",
+      "nationality": "Brazilian",
+      "naturalness": "bayeux",
+      "profession": "estudante",
+      "schooling": "infantil",
+      "maritalStatus": "Single",
+      "mother": "estela ",
+      "father": "esdras",
+      "id": 3
+    },
+    {
+      "cpf": "885105654-49",
+      "name": "samuel",
+      "dateOfBirth": "29/08/2008",
+      "email": "samuel14@gmail.com",
+      "sex": "Masculine",
+      "nationality": "Brazilian",
+      "naturalness": "bayeux",
+      "profession": "estudando",
+      "schooling": "fundamental",
+      "maritalStatus": "Single",
+      "mother": "estela",
+      "father": "esdras",
+      "id": 4
     }
   ]
 }
