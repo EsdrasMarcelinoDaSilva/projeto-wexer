@@ -1,5 +1,5 @@
 async function getUser(){
-    const apiResponse = await fetch("http://localhost:3000/user")
+    const apiResponse = await fetch("https://db-wexer.onrender.com/user")
     const users = await apiResponse.json()
     console.log(users)
 }
@@ -47,7 +47,7 @@ passwordForm.addEventListener('submit', async (event) =>{
     }
    
     const createPost = async (user) => {
-       await fetch("http://localhost:3000/user", {
+       await fetch("https://db-wexer.onrender.com/user", {
           method: "POST",
           headers: {
             'Accept': 'application/json, text/plain, */*',

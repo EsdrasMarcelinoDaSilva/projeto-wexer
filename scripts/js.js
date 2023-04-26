@@ -35,7 +35,7 @@ async function modal(data, horainicio, horafim, titulo, resumo, valor, formadepa
 
 async function lista_sessao(id) {
     
-    await fetch('http://localhost:3000/sessao', {
+    await fetch('https://db-wexer.onrender.com/sessao', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -49,7 +49,7 @@ async function sessoes1() {
     const params = new URLSearchParams(urlstring)
     const usuario = params.get('usuario')
     
-    const api = await fetch('http://localhost:3000/sessao')
+    const api = await fetch('https://db-wexer.onrender.com/sessao')
     const sessoes = await api.json()
     console.log(sessoes)
     const sessoesfiltradas = sessoes.filter(sessao => sessao.paciente === usuario)
@@ -78,11 +78,11 @@ async function sessoes1() {
 async function listarSessoesEFatos() {
     const urlParams = new URLSearchParams(window.location.search)
     const usuario = urlParams.get('usuario')
-    const responseSessoes = await fetch('http://localhost:3000/sessao')
+    const responseSessoes = await fetch('https://db-wexer.onrender.com/sessao')
     const sessoes = await responseSessoes.json()
     const sessoesFiltradas = sessoes.filter(sessao => sessao.paciente === usuario)
   
-    const responseFatos = await fetch('http://localhost:3000/fatos_relevantes')
+    const responseFatos = await fetch('https://db-wexer.onrender.com/fatos_relevantes')
     const fatos = await responseFatos.json();
     const fatosFiltrados = fatos.filter(fato => fato.paciente === usuario)
   
@@ -152,7 +152,7 @@ async function listarSessoesEFatos() {
 
 
     async function displayPatient(){
-    const response  = await fetch("http://localhost:3000/patients/")
+    const response  = await fetch("https://db-wexer.onrender.com/patients/")
     const patients = await response.json()
     allPatients = patients
     
