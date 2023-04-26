@@ -17,44 +17,46 @@ body{
     height: fit-content;
     justify-content: center;
     margin: 0 auto;
-    margin-top: 120px;
+    margin-top: 7.5em;
     border-radius: 18px;
     background-color: #017849;
 }
-/* @media (max-width: 767px) {
+@media (max-width: 47.9375em) {
     .box {
       width: 90%;
       margin: 0 auto;
+      margin-top: 7.5em;
+      margin-left: 2em;
     }
-  } */
+  } 
   
 .box-cadastro{
     display: flex;
     justify-content: center;
     margin: 0 auto;
-    margin-top: 120px;
+    margin-top: 7.5em;
     border-radius: 18px;
     background-color: white;
-    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.418);
+    box-shadow: 0.0625em 0.0625em 0.5em rgba(0, 0, 0, 0.418);
 }
 .img{
     display: flex;
     justify-content: center;
-    margin-top: 30px;
+    margin-top: 1.875em;
 }
 .form-signin{
-    padding: 10px;
+    padding: 0.625em;
     width: 70%;
 }
 .form-control{
     border: none;
 }
 .input-text{
-    border:1px solid gray;
+    border:0.0625em solid gray;
 }
 .form-control:focus{
     outline-style: solid;
-    outline-width: 2px;
+    outline-width: 0.125em;
     outline-color: white;
 }
 img{
@@ -78,11 +80,11 @@ label{
 }
 .btn{
     color: white;
-    border: 1px solid white;
+    border: 0.0625em solid white;
 }
 .btn:hover{
     color: white;
-    border: 1px solid white;
+    border: 0.0625em solid white;
 }
 
   
