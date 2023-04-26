@@ -58,35 +58,72 @@ const createPost = async (patient) => {
    
 })
 
-async function displayPatient(){
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const user = urlParams.get('user')
 
-    console.log(user)
+let allPatients = []
+
+async function displayPatient(){
     const response  = await fetch("http://localhost:3000/patients/")
     const patients = await response.json()
+    allPatients = patients // armazenando todos os pacientes na variável global
+
     const objPatients = document.querySelector('#row')
-    console.log(patients)
+    const inputFilter = document.querySelector('#input-filter')
+    const buttonFilter = document.querySelector('.filter')
 
     let html = ''
-    patients.forEach(patient =>{
+    allPatients.forEach(patient =>{
         
-    html += `<div class="col-2 first text-center py-2 px-0">${patient.id}</div>
-     <div class="col-4 first py-2 px-1 patient-1" id="patient-1" onclick="showPatientModal(${patient.id})">${patient.name}</div>
-    <div class="col-4 first py-2 px-1">${patient.cpf}</div>
-    <div class="col-2 first d-flex justify-content-evenly py-2 px-0 flex-wrap">
-    <a href="section.html?user=${patient.id}"><img src="./imagens/section.png" alt=""></a><a href=""><img src="./imagens/edit.png" alt=""></a><a href="#" onclick="deletePatient(${patient.id})"><img src="./imagens/bin.png" alt=""></a>
-    </div>`
+        html += `<div class="col-2 first text-center py-2 px-0">${patient.id}</div>
+         <div class="col-4 first py-2 px-1 patient-1" id="patient-1"    
+        onclick="showPatientModal(${patient.id})">${patient.name}</div>
+        <div class="col-4 first py-2 px-1">${patient.cpf}</div>
+        <div class="col-2 first d-flex justify-content-evenly py-2 px-0 flex-wrap">
+        <a href="section.html?user=${patient.id}"><img src="./imagens/section.png" alt=""></a>
+        <a href="#" onclick="putPatient(${patient.id})"><img src="./imagens/edit.png" alt=""></a>
+        <a href="#" onclick="deletePatient(${patient.id})">
+        <img src="./imagens/bin.png" alt=""></a>
+        </div>`
    
     })
 
     objPatients.innerHTML = html   
+
+    buttonFilter.addEventListener('click', (e) => {
+        e.preventDefault()
+        const filterValue = inputFilter.value.trim().toLowerCase()
+
+        if (filterValue !== '') {
+            const filteredPatients = allPatients.filter(patient => {
+                return patient.name.toLowerCase().includes(filterValue) || 
+                patient.cpf.toLowerCase().includes(filterValue)
+            })
+
+            let htmlFiltered = ''
+            filteredPatients.forEach(patient => {
+                htmlFiltered += `<div class="col-2 first text-center py-2 px-0">${patient.id}</div>
+                     <div class="col-4 first py-2 px-1 patient-1" id="patient-1" 
+                      onclick="showPatientModal(${patient.id})">${patient.name}</div>
+                    <div class="col-4 first py-2 px-1">${patient.cpf}</div>
+                    <div class="col-2 first d-flex justify-content-evenly py-2 px-0 flex-wrap">
+                    <a href="section.html?user=${patient.id}"><img src="./imagens/section.png" alt=""></a>
+                    <a href="#" onclick="putPatient(${patient.id})"><img src="./imagens/edit.png" alt=""></a>
+                    <a href="#" onclick="deletePatient(${patient.id})">
+                    <img src="./imagens/bin.png" alt=""></a>
+                    </div>`
+            })
+
+            objPatients.innerHTML = htmlFiltered
+        } else {
+            displayPatient() // exibe todos os pacientes novamente
+        }
+    })
 }
+
 document.addEventListener("DOMContentLoaded", () => {
     displayPatient()
     console.log('entrei')
 })
+
 
 async function deletePatient(id){
     await fetch(`http://localhost:3000/patients/${id}`, {
@@ -114,3 +151,38 @@ async function showPatientModal(id) {
     // exibe o modal preenchido
     showModal('main-pt')  
 }  
+
+const putPatient = async (id) => {
+    
+    console.log('entrei putPatient', id)
+    await fetch(`http://localhost:3000/patients/${id}`,{
+      method: "PUT",
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(id)
+    })
+    showModal('main-edit-patient')
+}
+
+// async function editPatient()
+
+
+
+// /filtragem//
+// const filterBtn = document.querySelector('.filtro');
+// const searchInput = document.querySelector('.Pesquisar');
+
+// // Ao clicar no botão filtrar
+// filterBtn.addEventListener('click', () => {
+//   // Obter os pacientes do localStorage
+//   const patients = JSON.parse(localStorage.getItem('pacientes'));
+
+//   // Filtrar os pacientes com base na entrada de pesquisa
+//   const filteredPatients = patients.filter((patient) => {
+//     return (
+//       patient.nome.toLowerCase().includes(searchInput.value.toLowerCase()) ||
+//       patient.codigo.toString().includes(searchInput.value.toLowerCase())
+//     );
+//   });

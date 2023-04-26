@@ -25,9 +25,9 @@
         <div class="dropdown mb-1">
         <button class="btn dropdown-toggle p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
         </button>
-          <ul class="dropdown-menu p-0" id="email-header">
-            <li><a class="dropdown-item" href="" id="email-a"></a></li>
-            <li><a class="dropdown-item" href="index.html">Exit</a></li>
+          <ul class="dropdown-menu" id="email-header">
+            <li class="li-h"><a class="dropdown-item" href="" id="email-a"></a></li>
+            <li class="li-h"><a class="dropdown-item" href="index.html">Exit</a></li>
           </ul>
         </div>
       </div>
@@ -92,72 +92,26 @@
                       <button type="button" id="down" class="dropdown-toggle" data-bs-toggle="dropdown">
                       </button>
                       <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-items" href="#">All</a></li>
-                        <li><a class="dropdown-items" href="#">Section</a></li>
-                        <li><a class="dropdown-items" href="#">Relevant Fact</a></li>
+                        <li class="li"><a class="dropdown-items" href="#" id="all">All</a></li>
+                        <li class="li"><a class="dropdown-items" href="#" id="bt-section">Section</a></li>
+                        <li class="li"><a class="dropdown-items" href="#" id="bt-fact">Relevant Fact</a></li>
                       </ul>
                     </div>
                     
                   </div>
-                  
-                  <div class="fieldSection position-relative">
-                    <img  class="elipse-g" src="./imagens/elipse-green.png" alt="">
-                    <img class="m-white" src="./imagens/mental-health-line-white.png" alt="">
-                    <div class="d-flex justify-content-between">
-                      <h6 class="title-sf">Section 01</h6>
-                      <button type="button" id="down-rt" class="dropdown-button" data-bs-toggle="dropdown">
-                        ...
-                      </button>
-                      <ul class="dropdown-menu dropdown-menu-center">
-                        <li><img class="pencil" src="./imagens/pencil-line.png" alt=""><a class="dropdown-items" href="#">To edit</a></li>
-                        <li><img class="delete-line" src="./imagens/delete-bin-5-line.png" alt=""><a class="dropdown-items" href="#">Delete</a></li>
-                      </ul>
-                    </div>
 
-                    <span class="field-span">September 22 2022</span>
-                    <p class="field-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio dolore culpa placeat qui laboriosam nisi quidem corporis, expedita, facere possimus optio laudantium porro. Sit mollitia voluptate, consequatur sunt quasi unde.</p>
+                  <!-- conteudo sendo gerado patientsSection.js-->
+                
+                  <div id="sectionField">
+
                   </div>
 
-                  <div class="in-between"></div>
+                  <div id="factField">
 
-                  <div class="fieldFact position-relative">
-                    <img class="elipse-b" src="./imagens/elipse-blue.png" alt="">
-                    <img class="m-white-b" src="./imagens/pushpin-line-white.png" alt="">
-                    <div class="d-flex justify-content-between">
-                      <h6 class="title-sf">Relevant Fact</h6>
-                      <button type="button" id="down-rt" class="dropdown-button" data-bs-toggle="dropdown">
-                        ...
-                      </button>
-                      <ul class="dropdown-menu dropdown-menu-center">
-                        <li><img class="pencil" src="./imagens/pencil-line.png" alt=""><a class="dropdown-items" href="#">To edit</a></li>
-                        <li><img class="delete-line" src="./imagens/delete-bin-5-line.png" alt=""><a class="dropdown-items" href="#">Delete</a></li>
-                      </ul>
-                    </div>
-
-                    <span class="field-span">September 15 2022</span>
-                    <p class="field-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio dolore culpa placeat qui laboriosam nisi quidem corporis, expedita, facere possimus optio laudantium porro. Sit mollitia voluptate, consequatur sunt quasi unde.</p>
                   </div>
 
-                  <div class="between"></div> 
-                  
-                  <div class="fieldSection position-relative">
-                    <img  class="elipse-g" src="./imagens/elipse-green.png" alt="">
-                    <img class="m-white" src="./imagens/mental-health-line-white.png" alt="">
-                    <div class="d-flex justify-content-between">
-                      <h6 class="title-sf">Section 02</h6>
-                      <button type="button" id="down-rt" class="dropdown-button" data-bs-toggle="dropdown">
-                        ...
-                      </button>
-                      <ul class="dropdown-menu dropdown-menu-center">
-                        <li><img class="pencil" src="./imagens/pencil-line.png" alt=""><a class="dropdown-items" href="#">To edit</a></li>
-                        <li><img class="delete-line" src="./imagens/delete-bin-5-line.png" alt=""><a class="dropdown-items" href="#">Delete</a></li>
-                      </ul>
-                    </div>
-
-                    <span class="field-span">September 22 2022</span>
-                    <p class="field-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio dolore culpa placeat qui laboriosam nisi quidem corporis, expedita, facere possimus optio laudantium porro. Sit mollitia voluptate, consequatur sunt quasi unde.</p>
-                  </div>
-
+   
+                  <!----------------------------------------------------------------------------------->
                   <div class="span-back d-flex justify-content-center mt-5 mb-5 gap-1 p-2">
                     <span class="material-symbols-outlined">
                       <a href="#" class="arrow">keyboard_double_arrow_up</a>
@@ -182,11 +136,11 @@
   <main id="main-np">
 
     <div class="div-form d-flex justify-content-center">
-      <form>
+      <form id="formNewSection">
         <div class="d-flex justify-content-between patients">
           
           <div class="patient-data d-flex align-items-center mb-2">
-            <h3 class="pt">New patient</h3>
+            <h3 class="pt">New Section</h3>
           </div>
 
           <div class="close-modal">
@@ -243,7 +197,7 @@
         <div class="col-10">
           <div class="form-group">
             <label for="">Section summary*</label>
-            <textarea class="form-control" placeholder="Comment here" id="Textarea"></textarea>
+            <textarea class="form-control" placeholder="Comment here" id="textarea"></textarea>
           </div>
         </div>
 
@@ -258,7 +212,7 @@
           
           <div class="col-3">
             <div class="form-group">
-              <label for="input4">Value</label><br>
+              <label for="input6">Value</label><br>
               <input type="text" class="form-control" id="input6" placeholder="US$ 32.47">
             </div>
           </div>
@@ -266,7 +220,7 @@
           <div class="col-3">
 
             <div class="form-group">
-              <label for="input4">Form of payment</label>
+              <label for="payment">Form of pay</label>
               <input list="pay" type="text" class="form-control" id="payment" placeholder="Select">
                 <datalist id="pay">
                   <option value="">Select an option</option>
@@ -320,7 +274,7 @@
             <span class="span">*</span><span>Required fields</span>
           </div>
           <div class="baseboard d-flex gap-2">
-            <span class="mt-2 cancel">Cancel</span>
+            <span class="mt-2 cancel" onclick="closeModal('main-np')">Cancel</span>
             <button class="btn create">Create</button> 
           </div>
         </div>
@@ -330,13 +284,13 @@
 
   </main>
 
-        <!-- modal fact -->
+  <!-------modal fact---------->
 
   <main id="main-fact">
 
     <div class="div-form d-flex justify-content-center">
 
-      <form class="form-fact" action="">
+      <form class="form-fact" action="" id="formNewFact">
         <div class="d-flex justify-content-between patients">
           
           <div class="patient-data d-flex align-items-center mb-2">
@@ -362,7 +316,7 @@
           <div class="col-8">
             <div class="form-group mt-1">
               <label for="input10">Title*</label>
-              <input type="text" class="form-control" id="input10" placeholder="">
+              <input type="text" class="form-control" id="input-10" placeholder="">
             </div>
           </div>
 
@@ -371,13 +325,13 @@
         <div class="col-10">
           <div class="form-group">
             <label for="">Description*</label>
-            <textarea class="form-control" placeholder="Comment here" id="Textarea-fact"></textarea>
+            <textarea class="form-control" placeholder="Comment here" id="textarea-fact"></textarea>
           </div>
         </div>
         
         <hr>
 
-        <div class="base d-flex justify-content-between mt-4">
+        <div class="base d-flex justify-content-between">
           <div class="mt-2">
             <span class="span">*</span><span>Required fields</span>
           </div>

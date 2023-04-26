@@ -1,3 +1,4 @@
+
 body{
     background-color: #E5E5E5
 }
@@ -18,9 +19,11 @@ p, h4{
     background-color: #017849;
     color: white;
 }
-.dropdown-item:hover{
-    background-color: #017849;
-    color: white;
+.dropdown-menu{
+    padding: 0;
+}
+.li-h{
+    padding: 0;
 }
 .dropdown-toggle::after {
     font-size: 1.8em;
@@ -159,8 +162,8 @@ form{
     padding: 2%;
     width: 95%;
 }
-#Textarea{
-    
+#textarea{
+    resize: none;
     height:8em;
     padding:0.5em;
 }
@@ -191,9 +194,6 @@ hr{
     color: white;
     font-weight: 600;
 }
-#Textarea{
-    resize: none;
-}
 
 /* modal fact */
 
@@ -210,14 +210,19 @@ hr{
     padding: 2.4%;
 }
 .form-fact{
-    overflow: clip;
-    height: 74%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 76%;
 }
-#Textarea-fact{
+#textarea-fact{
     height: 10em;  
     padding: 0.5em;
     width: 112%;
     resize: none;
+}
+.create:hover{
+    background-color: #017849;
+    color: white;
 }
 .div-modal-center-1{
     margin-left: 0.5em;
@@ -231,7 +236,7 @@ hr{
 /* ----field section----- */
 
 .line{
-    width: 83%;
+    width: 84%;
 }
 .hrDiv{
     border:0.125em solid gray; 
@@ -248,26 +253,30 @@ hr{
     margin-bottom:0.6em;
 }
 .all{
-    margin-left: 0.3em;
+    font-weight: bold;
 }
-.dropdown-menu{
-    width: 16%;  
+.dropdown-menu-end{
+    width: 16%;
+}
+.li:hover{
+    background-color: #01784877;
+    color:green;
 }
 li{
-    padding: 1em;
+    padding: 0.5em;
 }
 .dropdown-items{
     color:unset;
     text-decoration: none;
 }
-li:hover{
+/* li:hover{
     background-color: #0eb37151;
     font-weight: 500;
     
-}
-li:hover a{
+} */
+/* li:hover a{
     color:#007515;
-}
+} */
 .fieldSection{
     padding: 0.8em;
     border-radius: 0 0.5em 0.5em 0;

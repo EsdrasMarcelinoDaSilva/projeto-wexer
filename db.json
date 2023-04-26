@@ -1,69 +1,76 @@
 {
-  "user": [
+  "medicalRecord": [
     {
-      "id": 1,
-      "name": "Esdras Marcelino da Silva",
-      "email": "profesdras@hotmail.com",
-      "password": "12345678"
+      "type": "section",
+      "title": "Section 01",
+      "date": "25/04/2023",
+      "patientId": 1,
+      "summary": "A paciente Maria encontra-se com melhoras no quadro psíquico  ",
+      "id": 1
     },
     {
-      "name": "eduardo",
-      "email": "eduardo123@hotmail.com",
-      "password": "ffffffff",
+      "type": "section",
+      "title": "Section 02",
+      "date": "01/01/2000",
+      "patientId": 1,
+      "summary": "ddddddddddddd",
       "id": 2
     },
     {
-      "name": "Junior",
-      "email": "juniortj@outlook.com",
-      "password": "jjjjjjjj",
+      "type": "section",
+      "title": "Section 03",
+      "date": "03/03/2003",
+      "patientId": 1,
+      "summary": "mmmmmmmmmmmmmmmmmmm",
       "id": 3
+    },
+    {
+      "type": "fact",
+      "title": "Fact 01",
+      "date": "20/02/2000",
+      "patientId": 1,
+      "description": "bbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "id": 4
+    },
+    {
+      "type": "fact",
+      "title": "Fact 02",
+      "date": "02/08/1962",
+      "patientId": 1,
+      "description": "bla,bla,bla,bla,bla,bla,bla,bla,bla,bla,bla,",
+      "id": 5
     }
   ],
   "patients": [
     {
-      "cpf": "064379024-18",
-      "name": "Esdras",
-      "dateOfBirth": "10/05/1984",
-      "email": "profesdras2@outlook.com",
-      "sex": "Masculine",
-      "nationality": "Brazilian",
-      "naturalness": "João pessoa",
-      "profession": "desenvolvedor",
-      "schooling": "ensino médio",
-      "maritalStatus": "Married",
-      "mother": "maria jose",
-      "father": "Tarciso Marcelino",
-      "id": 2
-    },
-    {
-      "cpf": "064379024-18",
-      "name": "alice",
-      "dateOfBirth": "10/01/2000",
-      "email": "alice08@gmail.com",
+      "cpf": "885105654-49",
+      "name": "Maria",
+      "dateOfBirth": "02/08/2008",
+      "email": "esdras1962@hotmail.com",
       "sex": "Feminine",
       "nationality": "Brazilian",
-      "naturalness": "bayeux",
-      "profession": "estudante",
-      "schooling": "infantil",
+      "naturalness": "Bayeux",
+      "profession": "auxiliar de Serviços",
+      "schooling": "Ensino fundamental",
       "maritalStatus": "Single",
-      "mother": "estela ",
-      "father": "esdras",
-      "id": 3
+      "mother": "Cecilia",
+      "father": "Paulino",
+      "id": 1
     },
     {
-      "cpf": "885105654-49",
-      "name": "samuel",
+      "cpf": "064379024-18",
+      "name": "Samuel",
       "dateOfBirth": "29/08/2008",
       "email": "samuel14@gmail.com",
       "sex": "Masculine",
       "nationality": "Brazilian",
-      "naturalness": "bayeux",
-      "profession": "estudando",
-      "schooling": "fundamental",
+      "naturalness": "Bayeux",
+      "profession": "estudante",
+      "schooling": "Ensino médio Incompleto",
       "maritalStatus": "Single",
-      "mother": "estela",
-      "father": "esdras",
-      "id": 4
+      "mother": "Estela",
+      "father": "Esdras",
+      "id": 2
     }
   ]
 }

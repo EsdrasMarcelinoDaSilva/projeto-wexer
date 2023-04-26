@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-size: 1em;
 }
 body{
     background-color: #E5E5E5
@@ -107,7 +108,7 @@ section{
 
 /* ------------Css-Modal--------------- */
 
-#main{
+#main, #main-edit-patient{
     position: fixed;
     top: 0;
     left: 0;
