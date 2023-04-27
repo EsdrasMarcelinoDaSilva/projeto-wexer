@@ -136,7 +136,7 @@
   <main id="main-np">
 
     <div class="div-form d-flex justify-content-center">
-      <form id="formNewSection">
+      <form id="formNewSection" class="form-New">
         <div class="d-flex justify-content-between patients">
           
           <div class="patient-data d-flex align-items-center mb-2">
@@ -269,15 +269,20 @@
 
         <hr>
 
-        <div class="base d-flex justify-content-between mt-4">
-          <div class="mt-2">
-            <span class="span">*</span><span>Required fields</span>
+        <div class="row">
+          <div class="col-9 col-sm-8 col-lg-12">
+            <div class="base d-flex justify-content-between mt-4">
+              <div class="mt-2">
+                <span class="span">*</span><span>Required fields</span>
+              </div>
+              <div class="baseboard d-flex gap-2">
+                <span class="mt-2 cancel order-sm-1" onclick="closeModal('main-np')">Cancel</span>
+                <button class="btn create order-sm-2">Create</button>
+              </div>
           </div>
-          <div class="baseboard d-flex gap-2">
-            <span class="mt-2 cancel" onclick="closeModal('main-np')">Cancel</span>
-            <button class="btn create">Create</button> 
           </div>
         </div>
+
       </form>
       
     </div>
@@ -294,7 +299,7 @@
         <div class="d-flex justify-content-between patients">
           
           <div class="patient-data d-flex align-items-center mb-2">
-            <h3 class="pt">New patient</h3>
+            <h3 class="pt">New Fact</h3>
           </div>
 
           <div class="close-modal">
@@ -306,17 +311,18 @@
 
         <div class="col-12 div-modal-center-1 d-flex align-items-center">
 
-          <div class="col-3">
-            <div class="form-group">
-              <label for="input9">Date*</label><br>
-              <input type="text" class="form-control" id="input-9" placeholder="">
+          <div class="row">
+            <div class="col-4">
+              <!-- <div class="form-group"> -->
+                <label for="input-9">Date*</label>
+                <input type="text" class="form-control" id="input-9" placeholder="">
+              <!-- </div> -->
             </div>
-          </div>
-
-          <div class="col-8">
-            <div class="form-group mt-1">
-              <label for="input10">Title*</label>
-              <input type="text" class="form-control" id="input-10" placeholder="">
+            <div class="col-8">
+              <!-- <div class="form-group"> -->
+                <label for="input-10">Title*</label>
+                <input type="text" class="form-control" id="input-10" placeholder="">
+              <!-- </div> -->
             </div>
           </div>
 
@@ -331,13 +337,17 @@
         
         <hr>
 
-        <div class="base d-flex justify-content-between">
-          <div class="mt-2">
-            <span class="span">*</span><span>Required fields</span>
-          </div>
-          <div class="baseboard d-flex gap-2">
-            <span class="mt-2 cancel">Cancel</span>
-            <button class="btn create">Create</button> 
+        <div class="row">
+          <div class="col-9 col-sm-8 col-lg-12">
+            <div class="base d-flex justify-content-between">
+              <div class="mt-2">
+                <span class="span">*</span><span>Required fields</span>
+              </div>
+              <div class="baseboard d-flex gap-2">
+                <span class="mt-2 cancel order-sm-1">Cancel</span>
+                <button class="btn create order-sm-2">Create</button>
+              </div>
+            </div>
           </div>
         </div>
 

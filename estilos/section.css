@@ -124,13 +124,22 @@ span img{
     height: 100%;
     align-items: center;
 }
-form{
+.form-New{
     width: 50%;
     height: 80%;
     padding: 2%;
     border-radius: 0.75em;
     background-color: white;
     overflow-y: scroll;
+}
+@media (max-width: 47.9375em){
+    .form-New{
+        width: 90%;
+        height: auto;
+    }
+}
+label{
+    color: #017849;
 }
 .div-modal-center{
     gap: 0.625em;
@@ -180,12 +189,18 @@ hr{
     margin-right: 2%;
 }
 .create{
-    width: 90%;
+    width: 126%;
     padding: 4.5%;
     border: none;
-    border-radius: 12px;
+    border-radius: 0.75em;
     color: white;
     background-color:#017849;
+}
+@media (max-width: 36em) {
+    .create {
+      font-size: 0.875rem;
+      border-radius: 0.25em;
+    }
 }
 .circle{
     border-radius: 100%;
@@ -206,13 +221,23 @@ hr{
     background-color: rgba(0, 0, 0, 0.86);
     display: none;
 }
-#input10{
-    padding: 2.4%;
-}
 .form-fact{
+    width: 50%;
+    padding: 2%;
+    border-radius: 0.75em;
+    background-color: white;
     overflow-y: scroll;
     overflow-x: hidden;
-    height: 76%;
+    
+}
+#input-10{
+    height: 2.5em;
+}
+@media (max-width: 47.9375em){
+    .form-fact{
+        width: 90%;
+        height: auto;
+    }
 }
 #textarea-fact{
     height: 10em;  
@@ -269,14 +294,6 @@ li{
     color:unset;
     text-decoration: none;
 }
-/* li:hover{
-    background-color: #0eb37151;
-    font-weight: 500;
-    
-} */
-/* li:hover a{
-    color:#007515;
-} */
 .fieldSection{
     padding: 0.8em;
     border-radius: 0 0.5em 0.5em 0;

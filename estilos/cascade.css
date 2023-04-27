@@ -127,6 +127,9 @@ form{
     border-radius: 0.75em;
     background-color: white; 
 }
+label{
+    color: #017849;
+}
 .div-modal-center{
     gap: 0.625em;
 }
@@ -177,7 +180,7 @@ hr{
     background-color:#017849;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 36em) {
     .create {
       font-size: 0.875rem;
       border-radius: 0.25em;
