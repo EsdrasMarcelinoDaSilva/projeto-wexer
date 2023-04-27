@@ -176,6 +176,7 @@ hr{
     color: white;
     background-color:#017849;
 }
+
 @media (max-width: 576px) {
     .create {
       font-size: 0.875rem;
