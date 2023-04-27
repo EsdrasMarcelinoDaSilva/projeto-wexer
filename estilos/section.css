@@ -136,6 +136,7 @@ span img{
     .form-New{
         width: 90%;
         height: auto;
+        overflow-y: scroll;
     }
 }
 label{
