@@ -135,7 +135,7 @@ span img{
 @media (max-width: 47.9375em){
     .form-New{
         width: 90%;
-        height: auto;
+        height: 80%;
         overflow-y: scroll;
     }
 }
