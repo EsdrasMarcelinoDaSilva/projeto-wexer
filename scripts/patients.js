@@ -44,7 +44,7 @@ const patient = {
 }
 
 const createPost = async (patient) => {
-    await fetch("https://db-wexer.onrender.com/patients", {
+    await fetch("http://localhost:3000/patients", {
        method: "POST",
        headers: {
          'Accept': 'application/json, text/plain, */*',
@@ -54,15 +54,19 @@ const createPost = async (patient) => {
         }); 
     }
     createPost(patient)
-    window.location.href = 'patients.html'
-   
+    showModal('main-check')
+    const closeButton = document.querySelector('#main-check .success')
+    closeButton.addEventListener('click', () => {
+    window.location.href = 'patients.html'; // Redireciona após o fechamento do modal
+    });
+    
 })
 
 
 let allPatients = []
 
 async function displayPatient(){
-    const response  = await fetch("https://db-wexer.onrender.com/patients/")
+    const response  = await fetch("http://localhost:3000/patients/")
     const patients = await response.json()
     allPatients = patients // armazenando todos os pacientes na variável global
 
@@ -79,7 +83,7 @@ async function displayPatient(){
         <div class="col-4 first py-2 px-1">${patient.cpf}</div>
         <div class="col-2 first d-flex justify-content-evenly py-2 px-0 flex-wrap">
         <a href="section.html?user=${patient.id}"><img src="./imagens/section.png" alt=""></a>
-        <a href="#" onclick="putPatient(${patient.id})"><img src="./imagens/edit.png" alt=""></a>
+        <a href="#" onclick="editPatient(${patient.id})"><img src="./imagens/edit.png" alt=""></a>
         <a href="#" onclick="deletePatient(${patient.id})">
         <img src="./imagens/bin.png" alt=""></a>
         </div>`
@@ -106,7 +110,7 @@ async function displayPatient(){
                     <div class="col-4 first py-2 px-1">${patient.cpf}</div>
                     <div class="col-2 first d-flex justify-content-evenly py-2 px-0 flex-wrap">
                     <a href="section.html?user=${patient.id}"><img src="./imagens/section.png" alt=""></a>
-                    <a href="#" onclick="putPatient(${patient.id})"><img src="./imagens/edit.png" alt=""></a>
+                    <a href="#" onclick="editPatient(${patient.id})"><img src="./imagens/edit.png" alt=""></a>
                     <a href="#" onclick="deletePatient(${patient.id})">
                     <img src="./imagens/bin.png" alt=""></a>
                     </div>`
@@ -126,15 +130,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 async function deletePatient(id){
-    await fetch(`https://db-wexer.onrender.com/patients/${id}`, {
+    await fetch(`http://localhost:3000/patients/${id}`, {
       method: "DELETE"
     })
     window.location.href = 'patients.html'
 }
 
 async function showPatientModal(id) {
-    const response = await fetch(`https://db-wexer.onrender.com/patients/${id}`);
-    const patient = await response.json();
+    const response = await fetch(`http://localhost:3000/patients/${id}`);
+    const patient = await response.json()
     //campos do formulário com os dados do paciente
     document.querySelector('#input-0').value = patient.cpf;
     document.querySelector('#input-13').value = patient.name;
@@ -151,38 +155,79 @@ async function showPatientModal(id) {
     // exibe o modal preenchido
     showModal('main-pt')  
 }  
+// <---------------------------------------------------------------->
 
-const putPatient = async (id) => {
+async function editPatient(id) {
+    const response = await fetch(`http://localhost:3000/patients/${id}`);
+    const patient = await response.json()
+
+    let editCpf = document.querySelector('#input-24')
+    editCpf.value = patient.cpf
     
-    console.log('entrei putPatient', id)
-    await fetch(`https://db-wexer.onrender.com/patients/${id}`,{
-      method: "PUT",
-      headers: {
-        'Accept': 'application/json, text/plain, */*',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(id)
-    })
+    let editName = document.querySelector('#input-25')
+    editName.value = patient.name
+
+    let editdateOfBirth = document.querySelector('#input-26')
+    editdateOfBirth.value = patient.dateOfBirth
+
+    let editEmail = document.querySelector('#input-27')
+    editEmail.value = patient.email
+
+    let editSex = document.querySelector('#input-28')
+    editSex.value = patient.sex
+
+    let editNationality = document.querySelector('#input-29')
+    editNationality.value = patient.nationality
+
+    let editNaturalness = document.querySelector('#input-30')
+    editNaturalness.value = patient.naturalness
+
+    let editProfession = document.querySelector('#input-31')
+    editProfession.value = patient.profession
+
+    let editSchooling = document.querySelector('#input-32')
+    editSchooling.value = patient.schooling
+
+    let editMaritalStatus = document.querySelector('#input-33')
+    editMaritalStatus.value = patient.maritalStatus
+
+    let editMother = document.querySelector('#input-34')
+    editMother.value = patient.mother
+
+    let editFather = document.querySelector('#input-35')
+    editFather.value = patient.father
+  
     showModal('main-edit-patient')
+
+    const form = document.getElementById('form-new-edit')
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault()
+
+    const editPatient = {
+
+        "cpf": editCpf.value,
+        "name": editName.value,
+        "dateOfBirth": editdateOfBirth.value,
+        "email": editEmail.value,
+        "sex": editSex.value,
+        "nationality": editNationality.value,
+        "naturalness": editNaturalness.value,
+        "profession": editProfession.value,
+        "schooling": editSchooling.value,
+        "maritalStatus": editMaritalStatus.value,
+        "mother": editMother.value,
+        "father": editFather.value
+
+    }
+    console.log(editPatient)
+      await fetch(`http://localhost:3000/patients/${id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(editPatient)
+      });
+      displayPatient()
+      closeModal('main-edit-patient')
+  });
 }
-
-// async function editPatient()
-
-
-
-// /filtragem//
-// const filterBtn = document.querySelector('.filtro');
-// const searchInput = document.querySelector('.Pesquisar');
-
-// // Ao clicar no botão filtrar
-// filterBtn.addEventListener('click', () => {
-//   // Obter os pacientes do localStorage
-//   const patients = JSON.parse(localStorage.getItem('pacientes'));
-
-//   // Filtrar os pacientes com base na entrada de pesquisa
-//   const filteredPatients = patients.filter((patient) => {
-//     return (
-//       patient.nome.toLowerCase().includes(searchInput.value.toLowerCase()) ||
-//       patient.codigo.toString().includes(searchInput.value.toLowerCase())
-//     );
-//   });

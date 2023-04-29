@@ -6,7 +6,7 @@ async function displayPatient(){
     const user = urlParams.get('user')
    
     
-    const response  = await fetch("https://db-wexer.onrender.com/patients/" + user)
+    const response  = await fetch("http://localhost:3000/patients/" + user)
     const patients = await response.json()
     
     const patientName = document.querySelector('#paragraph')
@@ -20,15 +20,19 @@ async function displayPatient(){
     patientSchooling.textContent = patients.schooling
     currentPatient  = patients
 }
-document.addEventListener("DOMContentLoaded", () => {
-    displayPatient()
+document.addEventListener("DOMContentLoaded", async () => {
+
+    await displayPatient()
+    showSection(currentPatient.id)
+    showFact(currentPatient.id)
     console.log('entrei')
 })
 
 // <------------------------------------------------------------>
 
-const formNewSection = document.querySelector('#formNewSection')
-formNewSection.addEventListener('submit', (e) => {
+const formNewSection = document.querySelector('#main-np')
+const btnClose  = document.querySelector('#btn-close')
+btnClose.addEventListener('click', (e) => {
     e.preventDefault()
 
     const title = document.querySelector('#inputEmail4')
@@ -45,7 +49,7 @@ formNewSection.addEventListener('submit', (e) => {
 
 const createPost = async (fieldSection) => {
 
-    await fetch("https://db-wexer.onrender.com/medicalRecord", {
+    await fetch("http://localhost:3000/medicalRecord", {
         method: "POST",
         headers: {
             'Accept': 'application/json, text/plain, */*',
@@ -53,14 +57,16 @@ const createPost = async (fieldSection) => {
         },
             body: JSON.stringify(fieldSection)
         }); 
-        showSection()
+        showSection(currentPatient.id)
     }
     createPost(fieldSection)
+    formNewSection.style.display = 'none'
     return false
+  
 })
 
-async function showSection(){
-    const response  = await fetch("https://db-wexer.onrender.com/medicalRecord")
+async function showSection(patientId){
+    const response  = await fetch("http://localhost:3000/medicalRecord?patientId=" + patientId)
     const section = await response.json()
     const objSection = document.querySelector('#sectionField')
     
@@ -125,22 +131,19 @@ async function showSection(){
     objSection.insertAdjacentHTML('afterbegin', htmlStructure)   
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    showSection()
-})
-
 async function delSection(id){
     console.log('entrei delSection', id)
-    await fetch(`https://db-wexer.onrender.com/medicalRecord/${id}`,{
+    await fetch(`http://localhost:3000/medicalRecord/${id}`,{
       method: "DELETE"
     })
-    showSection()
+    showSection(currentPatient.id)
 }
 
 //<------------------------------------------------------>
 
-const formNewFact = document.querySelector('#formNewFact')
-formNewFact.addEventListener('submit', (e) => {
+const formNewFact = document.querySelector('#main-fact')
+const btnCloseFact = document.querySelector('#btn-close-fact')
+btnCloseFact.addEventListener('click', (e) => {
     e.preventDefault()
 
     const date = document.querySelector('#input-9')
@@ -156,7 +159,7 @@ formNewFact.addEventListener('submit', (e) => {
     }
 
 const createFact = async (fieldFact) => {
-    await fetch("https://db-wexer.onrender.com/medicalRecord",{
+    await fetch("http://localhost:3000/medicalRecord",{
         method: "POST",
         headers: {
             'Accept': 'application/json, text/plain, */*',
@@ -164,16 +167,18 @@ const createFact = async (fieldFact) => {
         },
             body: JSON.stringify(fieldFact)
         }); 
-        showFact()
+        showFact(currentPatient.id)
     }
     createFact(fieldFact)
+    formNewFact.style.display = 'none'
     return false
 })
 // <------------------------------------------------------------>
-async function showFact(){
-    const response  = await fetch("https://db-wexer.onrender.com/medicalRecord")
+async function showFact(patientId){
+    const response  = await fetch("http://localhost:3000/medicalRecord?patientId=" + patientId)
     const facts = await response.json()
     const objFact = document.querySelector('#factField')
+
     objFact.innerHTML = ''
     let htmlStructure = ''
 
@@ -228,16 +233,12 @@ async function showFact(){
     
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    showFact()
-})
-
 async function delFact(id){
     console.log('entrei delFact', id)
-    await fetch(`https://db-wexer.onrender.com/medicalRecord/${id}`, {
+    await fetch(`http://localhost:3000/medicalRecord/${id}`, {
       method: "DELETE"
     })
-    showFact()
+    showFact(currentPatient.id)
 }
   
 

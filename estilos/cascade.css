@@ -2,7 +2,6 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-size: 1em;
 }
 body{
     background-color: #E5E5E5
@@ -10,6 +9,7 @@ body{
 .container{
     border-radius: 0.6em;
     width: 84%;
+    font-family:Arial, Helvetica, sans-serif;
 }
 header{
     box-shadow: 0.0625em 0.0625em 0.5em rgba(0, 0, 0, 0.424);
@@ -108,7 +108,7 @@ section{
 
 /* ------------Css-Modal--------------- */
 
-#main, #main-edit-patient{
+#main,#main-pt,#main-check,#main-edit-patient{
     position: fixed;
     top: 0;
     left: 0;
@@ -156,6 +156,9 @@ label{
 .form-control{
     padding: 4%;
 }
+.modal-input{
+    background-color: rgba(128, 128, 128, 0.562);
+}
 .base{
     background-color: white;
 }
@@ -187,12 +190,32 @@ hr{
     }
 }
   
-#main-pt{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.86);
-    display: none;
+/* main-check-verify */
+
+#checked{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    margin-top: 6em;
+    width: 36%;
+    border-radius: 2em;  
+    background-color: white;
+}
+.img-check{
+    margin-top: 1em;
+    width: 18em;
+}
+h4.check{
+    margin-bottom: 2em;
+}
+.success{
+    width: 40%;
+    margin-bottom: 2em;
+    padding: 0.5em;
+    border-radius: 0.6em;
+    border: none;
+    background-color: #017849;
+    color: white;
 }
