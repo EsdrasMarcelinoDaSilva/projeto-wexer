@@ -1,4 +1,5 @@
 let currentPatient 
+// <-------------função de exibição dos dados do header--------------->
 
 async function displayPatient(){
     const queryString = window.location.search
@@ -37,14 +38,22 @@ btnClose.addEventListener('click', (e) => {
 
     const title = document.querySelector('#inputEmail4')
     const date = document.querySelector('#input3')
+    const start = document.querySelector('#input4')
+    const end = document.querySelector('#input5')
+    const paid = document.querySelector('#input6')
+    const pay = document.querySelector('#payment')
     const summary = document.querySelector('#textarea')
 
     const fieldSection = {
         "type": "section",
         "title": title.value,
-        "date" : date.value,
+        "date": date.value,
+        "startTime": start.value,
+        "endTime": end.value,
+        "paid": paid.value,
+        "pay": pay.value,
         "patientId": currentPatient.id,
-        "summary": summary.value,
+        "summary": summary.value
     }
 
 const createPost = async (fieldSection) => {
@@ -70,7 +79,6 @@ async function showSection(patientId){
     const section = await response.json()
     const objSection = document.querySelector('#sectionField')
     
-
     objSection.innerHTML =  ''
     let htmlStructure = ''
 
@@ -79,9 +87,9 @@ async function showSection(patientId){
    if(section.type === 'section'){
     if(index === 0){
      htmlStructure += `
-     <div class="fieldSection position-relative" id="fieldSection">
-     <img  class="elipse-g" src="./imagens/elipse-green.png" alt="">
-    <img class="m-white" src="./imagens/mental-health-line-white.png" alt="">
+    <div class="fieldSection position-relative" id="fieldSection">
+    <img  class="elipse-g" src="./imagens/elipse-green.png" alt="" id="elipse-g">
+    <a href="sectionfinal.html?user=${section.id}"><img class="m-white" src="./imagens/mental-health-line-white.png" alt=""></a>
     <div class="d-flex justify-content-between">
     <h6 class="title-sf">${section.title}</h6>
     <button type="button" id="down-rt" class="dropdown-button" data-bs-toggle="dropdown">
@@ -99,13 +107,13 @@ async function showSection(patientId){
     </div>
     <span class="field-span">${section.date}</span>
     <p class="field-p">${section.summary}</p>
-   </div>
+    </div>
     `
     }else{
         htmlStructure += `<div class="between"></div>
         <div class="fieldSection position-relative" id="fieldSection">
         <img  class="elipse-g" src="./imagens/elipse-green.png" alt="">
-        <img class="m-white" src="./imagens/mental-health-line-white.png" alt="">
+        <a href="sectionfinal.html?user=${section.id}"><img class="m-white" src="./imagens/mental-health-line-white.png" alt=""></a>
         <div class="d-flex justify-content-between">
         <h6 class="title-sf">${section.title}</h6>
         <button type="button" id="down-rt" class="dropdown-button" data-bs-toggle="dropdown">
@@ -127,9 +135,9 @@ async function showSection(patientId){
     } 
     }
 })
-
     objSection.insertAdjacentHTML('afterbegin', htmlStructure)   
 }
+
 
 async function delSection(id){
     console.log('entrei delSection', id)
@@ -242,4 +250,62 @@ async function delFact(id){
 }
   
 
+//<---------Filtragem de sessões e fatos relevantes-------------->
+
+const btnAll = document.querySelector('#all')
+const btnSection = document.querySelector('#bt-section')
+const btnFact = document.querySelector('#bt-fact')
+
+btnAll.addEventListener("click", filterAll)
+btnSection.addEventListener("click", filterSections)
+btnFact.addEventListener("click", filterFacts)
+
+
+function filterAll() {
+const sections = document.querySelectorAll('#sectionField')
+const facts = document.querySelectorAll('#factField')
+
+
+sections.forEach((section) => {
+section.style.display = "block"
+})
+
+
+facts.forEach((fact) => {
+fact.style.display = "block"
+})
+}
+
+// <---------------------filtragem sessões------------------------->
+
+function filterSections() {
+const sections = document.querySelectorAll('#sectionField')
+const facts = document.querySelectorAll('#factField')
+
+
+facts.forEach((fact) => {
+fact.style.display = "none"
+})
+
+
+sections.forEach((section) => {
+section.style.display = "block"
+})
+}
+
+// <----------------------filtragem fatos-------------------------->
+
+function filterFacts() {
+const sections = document.querySelectorAll('#sectionField')
+const facts = document.querySelectorAll('#factField')
+
+sections.forEach((section) => {
+section.style.display = "none"
+})
+
+facts.forEach((fact) => {
+fact.style.display = "block"
+
+})
+}
 

@@ -9,6 +9,10 @@ header{
     gap: 0.5rem;
     margin-right: 0.875em;
 }
+.logo{
+    padding: 0.3em;
+    box-shadow: 1px 1px 8px rgba(128, 128, 128, 0.313);
+}
 p{
     font-weight: lighter;
 }
@@ -180,6 +184,16 @@ label{
 }
 hr{
     border-top: 0.125em solid gray;
+}
+.imgPin{
+    width: 1.5625em;
+    height: 1.5625em;
+}
+.tip{
+    width: 50%;
+}
+.span-tip{
+   font-size: 0.9em;
 }
 .span{
     color:grey;

@@ -1,0 +1,47 @@
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color:  #E5E5E5;
+}
+.header{
+    margin-left: 4em;
+    margin-top: 0.2em;
+    border-radius: 1em 0 0 1em;
+    padding: 0.2em;
+}
+.logo{
+    padding: 0.3em;
+    box-shadow: 1px 1px 8px rgba(128, 128, 128, 0.313);
+}
+h6{
+    margin-bottom: 0;
+    font-weight: 600;
+}
+.mt-2{
+    font-size: 0.9em;
+    font-family: 'Courier New', Courier, monospace;
+}
+.mt-3{
+    color: rgb(62, 62, 62);
+}
+.back-a{
+    text-decoration: none;
+    text-shadow: 0.0625em 0.0625em 0.125em #017949;
+    color: gray;
+}
+.back-img{
+    width: 2em;
+    height: 2em;
+    color: #017949;
+}
+.col-lg-9{
+    margin-left: 0.5em;
+    padding: 1em;
+    background-color: white;
+    font-family:Arial, Helvetica, sans-serif;
+    border-radius: 1em;
+}
+.date-time,.pipe,.hour,.hour1{
+    font-size:0.9em ;
+}

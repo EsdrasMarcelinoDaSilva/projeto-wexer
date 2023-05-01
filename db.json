@@ -1,4 +1,145 @@
 {
-  "medicalRecord": [],
-  "patients": []
+  "medicalRecord": [
+    {
+      "type": "section",
+      "title": "Section 01",
+      "date": "20/04/2023",
+      "startTime": "16:00",
+      "endTime": "18:00",
+      "paid": "R$100,00",
+      "pay": "pix",
+      "patientId": 1,
+      "summary": "A paciente Gilmara Inicio a Triagem",
+      "id": 1
+    },
+    {
+      "type": "fact",
+      "title": "Fact 01",
+      "date": "20/04/2023",
+      "patientId": 1,
+      "description": "A paciente  Gilmara encontra-se com o quadro psíquico muito abalado",
+      "id": 2
+    },
+    {
+      "type": "section",
+      "title": "Section 01",
+      "date": "20/04/2023",
+      "startTime": "20:00",
+      "endTime": "21:00",
+      "paid": "R$ 120,00",
+      "pay": "debit_card",
+      "patientId": 2,
+      "summary": "O paciente fez o orçamento completo do seu tratamento e ja pagou a entrada",
+      "id": 3
+    },
+    {
+      "type": "section",
+      "title": "Section 02",
+      "date": "20/01/2020",
+      "startTime": "18:00",
+      "endTime": "20:00",
+      "paid": "R$220,00",
+      "pay": "paypal",
+      "patientId": 1,
+      "summary": "tudo pago",
+      "id": 4
+    },
+    {
+      "type": "fact",
+      "title": "Fact 01",
+      "date": "23/04/2023",
+      "patientId": 2,
+      "description": "Paciente Emanuel apresentou alto grau de irritabilidade mesmo depois de tres dias de uso do medicamento",
+      "id": 5
+    },
+    {
+      "type": "section",
+      "title": "Section 01",
+      "date": "22/04/203",
+      "startTime": "9:00",
+      "endTime": "11:00",
+      "paid": "R$108,00",
+      "pay": "paypal",
+      "patientId": 3,
+      "summary": "O Paciente Esdras inicio o processo de triagem sem muita resistencia",
+      "id": 6
+    }
+  ],
+  "patients": [
+    {
+      "cpf": "885105654-49",
+      "name": "Gilmara ",
+      "dateOfBirth": "01/09/1975",
+      "email": "gcsmsilva@gmail.com",
+      "sex": "Feminine",
+      "nationality": "Brazilian",
+      "naturalness": "Santa Rita",
+      "profession": "Professora",
+      "schooling": "Ensino Superior",
+      "maritalStatus": "Married",
+      "mother": "Maria da Guia",
+      "father": "Eufrásio Neto",
+      "id": 1
+    },
+    {
+      "cpf": "566191512-80",
+      "name": "Emanuel Tarciso",
+      "dateOfBirth": "10/10/2000",
+      "email": "emanuel08@ig.com",
+      "sex": "masculino",
+      "nationality": "American",
+      "naturalness": "Bayeux",
+      "profession": "Fisioterapeuta",
+      "schooling": "Superior",
+      "maritalStatus": "Single",
+      "mother": "Socorro",
+      "father": "Mariano",
+      "id": 2
+    },
+    {
+      "cpf": "70441136990",
+      "name": "Esdras Marcelino",
+      "dateOfBirth": "10/10/2010",
+      "email": "profesdras@hotmail.com",
+      "sex": "Masculine",
+      "nationality": "Brazilian",
+      "naturalness": "João Pessoa",
+      "profession": "Desenvolvedor web",
+      "schooling": "Médio completo",
+      "maritalStatus": "Married",
+      "mother": "Maria Jose",
+      "father": "Tarciso",
+      "id": 3
+    },
+    {
+      "cpf": "915382245-50",
+      "name": "Samuel",
+      "dateOfBirth": "29/08/2008",
+      "email": "samuel14@hotmail.com",
+      "sex": "Masculine",
+      "nationality": "Brazilian",
+      "naturalness": "Bayeux",
+      "profession": "Estudante",
+      "schooling": "Médio Cursando",
+      "maritalStatus": "Single",
+      "mother": "Estela ",
+      "father": "Esdras",
+      "id": 4
+    },
+    {
+      "cpf": "566191512-80",
+      "name": "Alice",
+      "dateOfBirth": "10/10/2000",
+      "email": "alicest@outlook.com",
+      "sex": "Feminine",
+      "nationality": "American",
+      "naturalness": "Bayeux",
+      "profession": "Fisioterapeuta",
+      "schooling": "Superior",
+      "maritalStatus": "Single",
+      "mother": "Fulana",
+      "father": "Cicrano",
+      "id": 5
+    }
+  ]
 }
