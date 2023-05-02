@@ -7,7 +7,7 @@ async function displayPatient(){
     const user = urlParams.get('user')
    
     
-    const response  = await fetch("http://localhost:3000/patients/" + user)
+    const response  = await fetch("https://projeto-wexer.vercel.app/patients/" + user)
     const patients = await response.json()
     
     const patientName = document.querySelector('#paragraph')
@@ -57,7 +57,7 @@ btnClose.addEventListener('click', (e) => {
 
 const createPost = async (fieldSection) => {
 
-    await fetch("http://localhost:3000/medicalRecord", {
+    await fetch("https://projeto-wexer.vercel.app/medicalRecord", {
         method: "POST",
         headers: {
             'Accept': 'application/json, text/plain, */*',
@@ -78,7 +78,7 @@ const createPost = async (fieldSection) => {
 // <---------------------------------gerador de sessões--------------------------------------->
 
 async function showSection(patientId){
-    const response  = await fetch("http://localhost:3000/medicalRecord?patientId=" + patientId)
+    const response  = await fetch("https://projeto-wexer.vercel.app/medicalRecord?patientId=" + patientId)
     const section = await response.json()
     const objSection = document.querySelector('#sectionField')
     
@@ -147,7 +147,7 @@ async function showSection(patientId){
 
 async function delSection(id){
     console.log('entrei delSection', id)
-    await fetch(`http://localhost:3000/medicalRecord/${id}`,{
+    await fetch(`https://projeto-wexer.vercel.app/medicalRecord/${id}`,{
       method: "DELETE"
     })
     showSection(currentPatient.id)
@@ -176,7 +176,7 @@ btnCloseFact.addEventListener('click', (e) => {
     }
 
 const createFact = async (fieldFact) => {
-    await fetch("http://localhost:3000/medicalRecord",{
+    await fetch("https://projeto-wexer.vercel.app/medicalRecord",{
         method: "POST",
         headers: {
             'Accept': 'application/json, text/plain, */*',
@@ -195,7 +195,7 @@ const createFact = async (fieldFact) => {
 // <---------------------------------gerador de fatos relevantes------------------------------->
 
 async function showFact(patientId){
-    const response  = await fetch("http://localhost:3000/medicalRecord?patientId=" + patientId)
+    const response  = await fetch("https://projeto-wexer.vercel.app/medicalRecord?patientId=" + patientId)
     const facts = await response.json()
     const objFact = document.querySelector('#factField')
 
@@ -255,7 +255,7 @@ async function showFact(patientId){
 
 async function delFact(id){
     console.log('entrei delFact', id)
-    await fetch(`http://localhost:3000/medicalRecord/${id}`, {
+    await fetch(`https://projeto-wexer.vercel.app/${id}`, {
       method: "DELETE"
     })
     showFact(currentPatient.id)
