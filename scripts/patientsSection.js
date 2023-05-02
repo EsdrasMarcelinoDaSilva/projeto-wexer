@@ -1,5 +1,5 @@
 let currentPatient 
-// <-------------função de exibição dos dados do header--------------->
+// <-------------função de exibição dos dados do admin no card do paciente--------------->
 
 async function displayPatient(){
     const queryString = window.location.search
@@ -26,10 +26,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     await displayPatient()
     showSection(currentPatient.id)
     showFact(currentPatient.id)
-    console.log('entrei')
 })
 
-// <------------------------------------------------------------>
+// <---------------------captura de dados no formulario do modal nova sessão e inclusão desses dados no db------------------------>
 
 const formNewSection = document.querySelector('#main-np')
 const btnClose  = document.querySelector('#btn-close')
@@ -73,6 +72,10 @@ const createPost = async (fieldSection) => {
     return false
   
 })
+// <------------------------------------------------------------------------------------------------------------------------------->
+
+
+// <---------------------------------gerador de sessões--------------------------------------->
 
 async function showSection(patientId){
     const response  = await fetch("http://localhost:3000/medicalRecord?patientId=" + patientId)
@@ -137,7 +140,10 @@ async function showSection(patientId){
 })
     objSection.insertAdjacentHTML('afterbegin', htmlStructure)   
 }
+// <--------------------------------------------------------------------------------------------------->
 
+
+// <----------deletar sessão----------------------------------->
 
 async function delSection(id){
     console.log('entrei delSection', id)
@@ -147,7 +153,10 @@ async function delSection(id){
     showSection(currentPatient.id)
 }
 
-//<------------------------------------------------------>
+//<------------------------------------------------------------>
+
+
+// <---------------------captura de dados no formulario do modal novo fato relevante e inclusão desses dados no db------------------------>
 
 const formNewFact = document.querySelector('#main-fact')
 const btnCloseFact = document.querySelector('#btn-close-fact')
@@ -181,7 +190,10 @@ const createFact = async (fieldFact) => {
     formNewFact.style.display = 'none'
     return false
 })
-// <------------------------------------------------------------>
+// <-------------------------------------------------------------------------------------------------------------------------------------->
+
+// <---------------------------------gerador de fatos relevantes------------------------------->
+
 async function showFact(patientId){
     const response  = await fetch("http://localhost:3000/medicalRecord?patientId=" + patientId)
     const facts = await response.json()
@@ -248,7 +260,7 @@ async function delFact(id){
     })
     showFact(currentPatient.id)
 }
-  
+// <------------------------------------------------------------------------------------------->
 
 //<---------Filtragem de sessões e fatos relevantes-------------->
 
@@ -276,7 +288,7 @@ fact.style.display = "block"
 })
 }
 
-// <---------------------filtragem sessões------------------------->
+// <---------------------filtragem sessões------------------------>
 
 function filterSections() {
 const sections = document.querySelectorAll('#sectionField')
@@ -293,7 +305,7 @@ section.style.display = "block"
 })
 }
 
-// <----------------------filtragem fatos-------------------------->
+// <----------------------filtragem fatos------------------------->
 
 function filterFacts() {
 const sections = document.querySelectorAll('#sectionField')
@@ -305,7 +317,6 @@ section.style.display = "none"
 
 facts.forEach((fact) => {
 fact.style.display = "block"
-
 })
 }
 

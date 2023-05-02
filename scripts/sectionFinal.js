@@ -1,7 +1,10 @@
+// <----------------------inserção de dados capturados nos elementos da pagina sectionfinal.html------------------------>
+
 const showSectionFinalData = async () => {
+
 try {
     const queryString = window.location.search
-    const urlParams = new URLSearchParams(queryString)
+    const urlParams = new URLSearchParams(queryString) //
     const user = urlParams.get('user')
    
     const response = await fetch("http://localhost:3000/medicalRecord/" + user)
@@ -25,7 +28,7 @@ try {
     pay.textContent = data.pay
     textSection.textContent = data.summary
 
-    const backLink = document.querySelector('#back-a')// mantendo os dados do paciente atual na pagina anterior (28-32)
+    const backLink = document.querySelector('#back-a') // mantendo os dados atualizados na pagina anterior ao clicar em voltar (28-32) 
     backLink.addEventListener('click', (e) => {
     e.preventDefault()
     history.back()
@@ -44,6 +47,5 @@ try {
 
 document.addEventListener("DOMContentLoaded", async () => {
     await showSectionFinalData()
-    console.log('entrei')
 })
 
