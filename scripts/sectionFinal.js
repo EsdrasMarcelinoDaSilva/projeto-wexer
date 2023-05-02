@@ -7,7 +7,7 @@ try {
     const urlParams = new URLSearchParams(queryString) //
     const user = urlParams.get('user')
    
-    const response = await fetch("https://projeto-wexer.vercel.app/medicalRecord/" + user)
+    const response = await fetch("https://db-wexer.onrender.com/medicalRecord/" + user)
     const data = await response.json()
     
     const titleFinal = document.querySelector('#title-final')
