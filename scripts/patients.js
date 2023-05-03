@@ -44,7 +44,7 @@ const patient = {
 }
 
 const createPost = async (patient) => {
-    await fetch("http://localhost:3000/patients", {
+    await fetch("https://db-wexer.onrender.com/patients", {
        method: "POST",
        headers: {
          'Accept': 'application/json, text/plain, */*',
@@ -66,7 +66,7 @@ const createPost = async (patient) => {
 let allPatients = []
 
 async function displayPatient(){
-    const response  = await fetch("http://localhost:3000/patients")
+    const response  = await fetch("https://db-wexer.onrender.com/patients")
     const patients = await response.json()
     allPatients = patients // armazenando todos os pacientes na variável global
 
@@ -130,14 +130,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 async function deletePatient(id){
-    await fetch(`http://localhost:3000/${id}`, {
+    await fetch(`https://db-wexer.onrender.com/patients/${id}`, {
       method: "DELETE"
     })
     window.location.href = 'patients.html'
 }
 
 async function showPatientModal(id) {
-    const response = await fetch(`http://localhost:3000/${id}`);
+    const response = await fetch(`https://db-wexer.onrender.com/${id}`);
     const patient = await response.json()
     //campos do formulário com os dados do paciente
     document.querySelector('#input-0').value = patient.cpf;
@@ -158,7 +158,7 @@ async function showPatientModal(id) {
 // <---------------------------------------------------------------->
 
 async function editPatient(id) {
-    const response = await fetch(`http://localhost:3000/${id}`);
+    const response = await fetch(`https://db-wexer.onrender.com/patients/${id}`);
     const patient = await response.json()
 
     let editCpf = document.querySelector('#input-24')
@@ -220,7 +220,7 @@ async function editPatient(id) {
 
     }
     console.log(editPatient)
-      await fetch(`http://localhost:3000/patients/${id}`, {
+      await fetch(`https://db-wexer.onrender.com/patients/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'

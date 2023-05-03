@@ -13,14 +13,6 @@
       "id": 1
     },
     {
-      "type": "fact",
-      "title": "Fact 01",
-      "date": "20/04/2023",
-      "patientId": 1,
-      "description": "Paciente faltou a sessão",
-      "id": 2
-    },
-    {
       "type": "section",
       "title": "Section 01",
       "date": "10/04/2023",
@@ -39,6 +31,14 @@
       "patientId": 4,
       "description": "Emanuel faltou a sessão e apresenta resistencia ao tratamento",
       "id": 4
+    },
+    {
+      "type": "fact",
+      "title": "Fact 01",
+      "date": "23/04/2023",
+      "patientId": 1,
+      "description": "começou o tratamento fazendo sua triagem",
+      "id": 5
     }
   ],
   "patients": [
@@ -59,7 +59,7 @@
     },
     {
       "cpf": "885362544-91",
-      "name": "samuel",
+      "name": "samuel Santos",
       "dateOfBirth": "29/08/2008",
       "email": "samuel14@gmail.com",
       "sex": "Masculine",
@@ -101,6 +101,21 @@
       "mother": "fulano",
       "father": "cicrano",
       "id": 5
+    },
+    {
+      "cpf": "022106234-10",
+      "name": "Danielle",
+      "dateOfBirth": "02/04/1983",
+      "email": "danipsi@gmail.com",
+      "sex": "Feminine",
+      "nationality": "Brazilian",
+      "naturalness": "Bayeux",
+      "profession": "psicologa",
+      "schooling": "superior",
+      "maritalStatus": "Married",
+      "mother": "maria jose",
+      "father": "tarciso",
+      "id": 6
     }
   ]
 }

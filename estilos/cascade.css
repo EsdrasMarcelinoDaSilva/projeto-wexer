@@ -202,14 +202,14 @@ hr{
     align-items: center;
     flex-direction: column;
     margin: 0 auto;
-    margin-top: 6em;
-    width: 36%;
+    margin-top: 12em;
+    width: 40%;
     border-radius: 2em;  
     background-color: white;
 }
 .img-check{
     margin-top: 1em;
-    width: 18em;
+    width: 8em;
 }
 h4.check{
     margin-bottom: 2em;
