@@ -92,7 +92,7 @@ async function showSection(patientId){
      htmlStructure += `
     <div class="fieldSection position-relative" id="fieldSection">
     <img  class="elipse-g" src="./imagens/elipse-green.png" alt="" id="elipse-g">
-    <a href="sectionfinal.html?user=${section.id}"><img class="m-white" src="./imagens/mental-health-line-white.png" alt=""></a>
+    <a href="sectionFinal.html?user=${section.id}"><img class="m-white" src="./imagens/mental-health-line-white.png" alt=""></a>
     <div class="d-flex justify-content-between">
     <h6 class="title-sf">${section.title}</h6>
     <button type="button" id="down-rt" class="dropdown-button" data-bs-toggle="dropdown">
@@ -116,7 +116,7 @@ async function showSection(patientId){
         htmlStructure += `<div class="between"></div>
         <div class="fieldSection position-relative" id="fieldSection">
         <img  class="elipse-g" src="./imagens/elipse-green.png" alt="">
-        <a href="sectionfinal.html?user=${section.id}"><img class="m-white" src="./imagens/mental-health-line-white.png" alt=""></a>
+        <a href="sectionFinal.html?user=${section.id}"><img class="m-white" src="./imagens/mental-health-line-white.png" alt=""></a>
         <div class="d-flex justify-content-between">
         <h6 class="title-sf">${section.title}</h6>
         <button type="button" id="down-rt" class="dropdown-button" data-bs-toggle="dropdown">
@@ -143,7 +143,7 @@ async function showSection(patientId){
 // <--------------------------------------------------------------------------------------------------->
 
 
-// <----------deletar sessão----------------------------------->
+// <----------deletar sessão---------------------------------->
 
 async function delSection(id){
     console.log('entrei delSection', id)
