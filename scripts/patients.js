@@ -137,7 +137,7 @@ async function deletePatient(id){
 }
 
 async function showPatientModal(id) {
-    const response = await fetch(`https://db-wexer.onrender.com/${id}`);
+    const response = await fetch(`https://db-wexer.onrender.com/patients/${id}`);
     const patient = await response.json()
     //campos do formulário com os dados do paciente
     document.querySelector('#input-0').value = patient.cpf;
